@@ -2,21 +2,20 @@
 
 $(document).ready(function(){
     $("button").click(function(){
-        $("button").after("add")
+        $("button").after(function() {
+            $( "#dialog" ).dialog({
+                modal: true,
+                buttons: {
+                    文本: function() {
+                        $( '#add' ).after( "wenben" );
+                    },
+                    日期:function(){
+                        $("#add").after("riqi")
+                    }
+                }
+            });
+        })
     })
-}   
-)
+})
 
-// $(function() {
-//     $( "#dialog" ).dialog({
-//         modal: true,
-//         buttons: {
-//             文本: function() {
-//                 $( this ).after( "wenben" );
-//             },
-//             日期:function(){
-//                 $(this).after("riqi")
-//             }
-//         }
-//     });
-// });
+
