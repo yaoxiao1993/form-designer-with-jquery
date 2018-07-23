@@ -9,7 +9,10 @@
     <script src="http://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     <script src="../node_modules/lodash/lodash.min.js"></script>
     <script src="js/main.js"></script>
-
+    <!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.0/jquery.min.js"></script> -->
+    <style type="text/css">
+        #dialog{display: none;}
+    </style>
     <title>Form Designer</title>
 </head>
 
@@ -17,7 +20,16 @@
 <div>
     <div id="container">
         <button id='add'>添加</button>
-        <div id="dialog" title="dialog"></div>
+        <div id="dialog" title="dialog">
+            <div id="select">
+                    <input id="wenben" type="radio" value="文本" name="add" visibility="hidden"/>文本
+                    <input id="riqi" type="radio" value="日期" name="add"/>日期
+            </div>  
+        </div>
+        <!-- <div>
+            <input id="datepicker"></input>
+        </div> -->
+        <button id='preview'>预览</button>
     </div>
 </div>
 </body>
