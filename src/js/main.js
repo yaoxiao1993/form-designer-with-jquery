@@ -11,12 +11,14 @@ $(document).ready(function(){
                 buttons: {
                     提交: function() {
                         if($("input[name='add']:checked").val()=='文本'){
-                            $( '#add' ).after( "<div><input id='inputtext'></input><button>删除</button></div>" );
+                            $( '#preview' ).after( "<div ><input id='inputtext'></input><button id='delete'>删除</button></div>" );
+                            bindListener();
                         }else if($("input[name=add]:checked").val()=='日期'){
-                            $( '#add' ).after( "<div><input id='dateselector' placeholder='请选择日期'></input><button>删除</button></div>" );
+                            $( '#preview' ).after( "<div><input id='dateselector' placeholder='请选择日期'></input><button id='delete'>删除</button></div>" );
                             $( '#dateselector' ).after(function(){
                                 $('#dateselector').datepicker();
                             });
+                            bindListener();
                         }
                         $(this).dialog("close")
                     },
@@ -26,6 +28,12 @@ $(document).ready(function(){
                 }
             });
         })
+        function bindListener(){
+            $("#delete").unbind().click(function(){
+                $(this).parent().remove()
+            })
+        }
+        
     })
 })
 
