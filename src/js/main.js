@@ -33,6 +33,13 @@ $(document).ready(function(){
                 $(this).parent().remove()
             })
         }
+        $("#preview").click(function(){
+            $("#add").hide();
+            if($("#delete").length>0){
+                $("#delete").hide();
+            }
+            $(this).text('编辑');
+        })
         
     })
 })
